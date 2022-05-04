@@ -1,0 +1,358 @@
+#sidebar
+{
+	float: right;
+}
+
+.sb #action
+{
+	width: 100%;
+	height: 67px;
+	
+	margin-top: 13px;
+	
+	text-align: center;
+	
+	background-color: #f2f2f2;
+	border-bottom: solid 1px #c6c6c6;
+}
+
+.sb #action div
+{
+	width: 57px;
+	height: 43px;
+	
+	margin: 10px 7px;
+	
+	display: inline-block;
+	
+	border: none;
+	
+	cursor: pointer;
+	
+	font-size: 13px;
+	line-height: 15px;
+	
+	color: #a1a1a1;
+	
+	font-weight: lighter;
+	
+	text-align: center;
+}
+
+.sb #action div a
+{
+	color: #a1a1a1;
+}
+
+.sb #action div a:hover
+{
+	text-decoration: none !important;
+	color: #347733;
+}
+
+.sb #action div span
+{
+	width: 100%;
+	height: 28px;
+	
+	font-family: 'icons';
+	font-size: 25px;
+	
+	line-height: 28px;
+	
+	
+	display: block;
+	
+	
+}
+
+.sb .actionButton
+{
+	font-family: SoberanaSans;
+	font-size: 13px;
+	
+	text-transform: uppercase;
+	
+	color: white !important;
+	
+	padding: 12px 20px 8px 20px;
+	
+	line-height: 13px;
+	
+	display: block;
+	
+	float: right;
+	
+	background-color: #347733;
+	
+	border-radius: 4px;
+}
+
+.sb .actionButton:hover
+{
+	text-decoration: none;
+	background-color: #4a9648;
+}
+
+#sb_contact_buttons
+{
+	width: 100%;
+	
+	text-align: center;
+}
+
+.sb_contact_button
+{
+	width: 97px;
+	height: 35px;
+	display: inline-block;
+	
+	padding: 75px 0 0 0;
+	margin: 5px 0;
+	
+	font-family: SoberanaSans;
+	font-size: 13px;
+	font-weight: normal;
+	
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+.sb_contact_button:hover
+{
+	background-position: right top;
+}
+
+#orientacion{background-image:url(../img/orientacion2.png);}
+#asistencia{background-image:url(../img/asistencia2.png);}
+#chat{background-image:url(../img/chat2.png);}
+#foro{background-image:url(../img/foro.png);}
+#ayuda{background-image:url(../img/ayuda2.png);}
+#habilitabuz{background-image:url(../img/habil.png);}
+
+.sb .collapsible, .full_width .collapsible
+{
+	width: 100%;
+	
+	float: left;
+	
+	font-family: SoberanaSans;
+	font-weight: lighter;
+}
+
+.sb .collapsible .c, .full_width .collapsible .c
+{
+	width: 92%;
+	margin: 0 4%;
+}
+
+.sb .collapsible h4, .full_width .collapsible h4
+{
+	width: 92%;
+	
+	padding: 5px 4% 0 14px;
+	
+	font-weight: lighter;
+	
+  /*text-transform: uppercase;*/
+	
+	line-height: 27px;
+	
+	background-color: #f2f2f2;
+	border-bottom: solid 1px #c6c6c6;
+	
+	background-position: right center;
+	background-repeat: no-repeat;
+	
+	cursor: pointer;
+}
+
+.sb .collapsible h4.ctpl, .full_width .collapsible h4.ctpl{background-image: url(../img/sbctpl.png);background-position: right 50%;}
+.sb .collapsible h4.ctmn, .full_width .collapsible h4.ctmn{background-image: url(../img/sbctmn.png);background-position: right 50%;}
+
+.sb .collapsible p, .full_width .collapsible p
+{
+	font-size: 13px;
+}
+
+.sb .collapsible p a, .full_width .collapsible p a
+{
+	color: #347733;
+}
+
+.sb .collapsible ul, .collapsible ol, , .full_width .collapsible ul, .full_width .collapsible ol
+{
+	font-size: 13px !important;
+	
+	line-height: 25px !important;
+}
+
+.sb .collapsible ul, .full_width .collapsible ul
+{
+	list-style-type: square !important;
+}
+
+.sb .collapsible ol, .full_width .collapsible ol
+{
+	margin-top: 0 !important;
+}
+
+.sb .collapsible .more, .full_width .collapsible .more
+{
+	display: block;
+	
+	max-width: 80%;
+	
+	margin: 30px 0 0 0;
+	
+	font-size: 13px;
+	
+	font-weight: lighter;
+	
+	color: #337732;
+}
+
+.sb #faq a:not(.more)
+{
+	color: black;
+}
+
+.sb #ur_select
+{
+	
+}
+
+.sb #ur_select select
+{
+	width: 274px;
+	height: 38px;
+}
+
+/* ___________________________________________________________________________ 1 Start */
+
+.sb_t1
+{
+	width: 92%;
+	
+	margin: 0 auto;
+	
+	border: none;
+	
+	display: block;
+}
+
+/* ___________________________________________________________________________ 1 End */
+
+/* ___________________________________________________________________________ 1 Start */
+
+#sb_t2
+{
+	font-family: SoberanaSans;
+	font-size: 13px;
+}
+
+/* ___________________________________________________________________________ 1 End */
+
+.sb_media
+{
+	width: 100%;
+	
+	clear: both;
+	
+	padding: 10px 0;
+}
+
+.sb_media img
+{
+	float: left;
+}
+
+.sb_media span
+{
+	display: block;
+	
+	font-weight: bold;
+	font-size: 13px;
+	
+	width: 116px;
+	
+	float: right;
+	
+	margin: 10px 10px 0 0;
+}
+
+.sb_media a
+{
+	display: block;
+	
+	font-weight: bold;
+	font-size: 13px;
+	
+	width: 116px;
+	
+	float: right;
+	
+	margin: 10px 10px 0 0;
+	cursor: pointer;
+}
+
+.sb_tag
+{
+	width: 96%;
+	
+	margin: 10px 0;
+	padding: 12px 2%;
+	
+	font-size: 13px;
+	
+	text-align: center;
+	
+	color: #218c21;
+	
+	background-color: #f2f2f2;
+}
+
+
+/* ___________________________________________________________________________ Related Start */
+
+#related p
+{
+	width: 85%;
+	
+	display: block;
+	
+	position: relative;
+	
+	padding-left: 15%;
+	
+	font-size: 14px;
+	
+	color: #148d14;
+}
+
+#related p a
+{
+	color: inherit;
+}
+
+#related .file_size
+{
+	color: #797979;
+}
+
+#related .rel_icon
+{
+	position: absolute;
+	
+	top: 1px;
+	left: 13px;
+	
+	display: block;
+	
+	width: 16px;
+	height: 19px;
+}
+
+
+
+/* ___________________________________________________________________________ Related End */

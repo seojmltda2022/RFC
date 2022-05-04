@@ -1,0 +1,640 @@
+@charset "UTF-8";
+
+/**
+ * Theme Name: Basic
+ * Version: 1.0.0
+ * Theme URL: http://sequencejs.com/themes/basic/
+ *
+ * A simple, colorful side-to-side slider
+ *
+ * This theme is powered by Sequence.js - The
+ * responsive CSS animation framework for creating unique sliders,
+ * presentations, banners, and other step-based applications.
+ *
+ * Author: Ian Lunn
+ * Author URL: http://ianlunn.co.uk/
+ *
+ * Theme License: http://sequencejs.com/licenses/#free-theme
+ * Sequence.js Licenses: http://sequencejs.com/licenses/
+ *
+ * Copyright © 2015 Ian Lunn Design Limited unless otherwise stated.
+ */
+
+body,
+html,
+.seq {
+  /* Uncomment to make the theme full-screen */
+  /* width: 100% !important; */
+  /* max-width: 100% !important; */
+  /* height: 100% !important; */
+  /* max-height: 100% !important; */
+}
+
+.wrapper-slider{
+    margin: 0 auto;
+	max-width: 960px;
+    max-height: 405px;
+}
+
+.seq {
+  position: relative;
+  /* Dimensions */
+  width: 100%;   
+   height: 450px;
+  /*max-height: 305px;*/
+  max-width: 100%;
+  /* Center the Sequence container on the page */
+  margin: 0 auto;
+  padding: 0;
+  /* Some basic styles */
+  font-family: SoberanaSans;;
+}
+
+.seq .seq-pagination,
+.seq .seq-screen,
+.seq .seq-canvas,
+.seq .seq-canvas > * {
+  /* Reset the canvas and steps for better browser consistency */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.seq .seq-preloader {
+  background: #279FE5;
+}
+
+.seq .seq-pagination {
+  position: absolute;
+  z-index: 10;
+  bottom: 14px;
+  width: 100%;
+  border: none;
+  text-align: center;
+}
+
+.seq .seq-pagination a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.seq .seq-pagination > * {
+  margin: 0 4px;
+  padding: 0;
+  display: inline-block;
+  zoom: 1;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: #909090;
+  border-radius: 100%;
+  -webkit-transition-duration: .1s;
+  transition-duration: .1s;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  /* Image replacement */
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+
+.seq .seq-pagination .seq-current {
+  background-color: #ffffff;
+}
+
+.seq .seq-canvas {
+	/* Make the canvas the same dimensions as the container and prevent lines
+   * from wrapping so each step can sit side-by-side */
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	white-space: nowrap;
+	/* Reset the font-size to remove 4px from :before and .title */
+	font-size: 0;
+	/*left: 10px;*/
+}
+
+.seq .seq-canvas > * {
+  /* Make the steps the same size as the container and sit side-by-side */
+  display: inline-block;
+  zoom: 1;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  white-space: normal;
+  text-align: center;
+  color: #2f722f;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.seq .seq-canvas > *:before {
+  /* Vertically align .seq-content */
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.seq .seq-content {
+  /* Default styles for content */
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 720px;
+  margin: 0 4%;
+  /* Reset the font-size from 0 back to 16 */
+  font-size: 16px;
+}
+
+.seq .seq-button {
+  display: inline-block;
+  zoom: 1;
+  margin-top: 2em;
+  padding: .4em .3em;
+  background-color: #2f722f;
+  border:3px solid #2f722f;
+  box-sizing:border-box;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 30px;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-transition-duration: .25s;
+  transition-duration: .25s;
+  -webkit-transition-property: background-color, color, border;
+  transition-property: background-color, color, border;
+}
+
+.seq .seq-button:focus,
+.seq .seq-button:hover {
+  color: #2f722f;
+  background-color: white;
+  border:3px solid #2f722f;
+}
+
+
+.seq .seq-title,
+.seq .seq-subtitle,
+.seq .seq-button {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.seq .seq-title,
+.seq .seq-subtitle {
+  margin: 0 0 .5em 0;
+  display: block;
+  line-height: 1.4;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.seq .seq-title {
+  font-size: 1.8em;
+}
+
+.seq.seq-active {
+  /* when JS is enabled */
+  /* Hide anything that goes beyond the boundaries of the Sequence container */
+  overflow: hidden;
+}
+
+.seq.seq-active .seq-preloader,
+.seq.seq-active .seq-pagination {
+  visibility: visible;
+}
+
+.seq.seq-active .seq-preloader.seq-preloaded {
+  visibility: hidden;
+}
+
+.seq.seq-active .seq-preloader .seq-preload-circle {
+  fill: white;
+}
+
+.seq.seq-active .seq-content {
+  /* Pull the content up a bit to account for the pagination */
+  margin-top: -26px;
+  vertical-align: top;
+}
+
+.seq.seq-active .seq-button {
+  -webkit-transform: translateZ(0) scale(0);
+  -ms-transform: translateZ(0) scale(0);
+  transform: translateZ(0) scale(0);
+}
+
+@-webkit-keyframes jelly {
+  0% {
+    -webkit-transform: translateZ(0) scale(0);
+    transform: translateZ(0) scale(0);
+  }
+
+  40% {
+    -webkit-transform: translateZ(0) scale(1.15);
+    transform: translateZ(0) scale(1.15);
+  }
+
+  60% {
+    -webkit-transform: translateZ(0) scale(1);
+    transform: translateZ(0) scale(1);
+  }
+
+  80% {
+    -webkit-transform: translateZ(0) scale(1.05);
+    transform: translateZ(0) scale(1.05);
+  }
+
+  100% {
+    -webkit-transform: translateZ(0) scale(1);
+    transform: translateZ(0) scale(1);
+  }
+}
+
+@keyframes jelly {
+  0% {
+    -webkit-transform: translateZ(0) scale(0);
+    -ms-transform: translateZ(0) scale(0);
+    transform: translateZ(0) scale(0);
+  }
+
+  40% {
+    -webkit-transform: translateZ(0) scale(1.15);
+    -ms-transform: translateZ(0) scale(1.15);
+    transform: translateZ(0) scale(1.15);
+  }
+
+  60% {
+    -webkit-transform: translateZ(0) scale(1);
+    -ms-transform: translateZ(0) scale(1);
+    transform: translateZ(0) scale(1);
+  }
+
+  80% {
+    -webkit-transform: translateZ(0) scale(1.05);
+    -ms-transform: translateZ(0) scale(1.05);
+    transform: translateZ(0) scale(1.05);
+  }
+
+  100% {
+    -webkit-transform: translateZ(0) scale(1);
+    -ms-transform: translateZ(0) scale(1);
+    transform: translateZ(0) scale(1);
+  }
+}
+
+.seq.seq-active .seq-title,
+.seq.seq-active .seq-subtitle {
+  /* Starting positions */
+  opacity: 0;
+  -webkit-transition-duration: .4s;
+  transition-duration: .4s;
+}
+
+.seq.seq-active .seq-title {
+  -webkit-transform: translate3d(0, -20px, 0);
+  -ms-transform: translate3d(0, -20px, 0);
+  transform: translate3d(0, -20px, 0);
+}
+
+.seq.seq-active h3 {
+  -webkit-transform: translate3d(0, 20px, 0);
+  -ms-transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, 20px, 0);
+}
+
+.seq .seq-in {
+  /* Animate in positions for content */
+}
+
+.seq .seq-in .seq-title,
+.seq .seq-in .seq-subtitle {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.seq .seq-in .seq-button {
+  -webkit-animation-name: jelly;
+  animation-name: jelly;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+}
+
+.seq .seq-out {
+  /* Animate out positions for content */
+}
+
+.seq .seq-out .seq-title,
+.seq .seq-out .seq-subtitle {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.seq .seq-out .seq-button {
+  -webkit-transform: scale(1) translateZ(0);
+  -ms-transform: scale(1) translateZ(0);
+  transform: scale(1) translateZ(0);
+}
+
+.seq .seq-content img{
+	position:absolute;
+	top:0;
+	left:0;
+  max-height: 405px;
+	width:100%;
+}
+.pagination-bar{
+	width:100%;
+	height:45px;
+	background-color:#d7d7d7;
+}
+.seq .seq-in .link{
+	position: relative;
+	display: block;
+	font-size: 20px;
+	text-align: left;
+	font-weight:bold;
+}
+
+#sequence li .seq-button{
+  position: absolute;
+  top: 40px;
+  right: 0;
+  margin: 0;
+  width: 420px;
+  max-height: 100px;
+  overflow: hidden;
+}
+#sequence li .link{
+  right: -260px;
+  top: 180px;
+  width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media  (min-width: 768px) {
+  .seq .seq-title,
+  .seq .seq-subtitle {
+    font-size: 1.4em;
+  }
+
+  .seq .seq-title {
+    font-size: 2.6em;
+  }
+}
+
+
+
+@media   (min-device-width: 1281px)  {
+.seq .seq-pagination > *:focus,
+.seq .seq-pagination > *:hover,
+.seq .seq-pagination .seq-current {
+  background-color: #ffffff;
+}
+}
+
+
+
+
+@media   (min-width: 480px) {
+
+
+
+
+
+
+
+  .seq:before {
+    /* Make an element a certain aspect ratio */
+    display: block;
+    content: "";
+    width: 100%;
+    /*padding-top: 56.25%;*/
+  }
+
+  .seq .seq-screen {
+    /*position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;*/
+  }
+
+  .seq .seq-content {
+    /* Pull the content up to account for the pagination */
+    margin-top: -19px;
+  }
+
+/*
+  .seq .seq-pagination > * {
+    width: 20px;
+    height: 20px;
+  }
+*/
+
+}
+
+
+
+
+
+/*# sourceMappingURL=sequence-theme.basic.css.map */ 
+@media  ( min-width: 481px)  and    (max-width : 801px){
+  .wrapper-slider{
+    max-height: 330px;
+  }
+	.seq .seq-button{
+		font-size:1.4em;
+	}
+	
+  #sequence li .link{
+    right: -210px;
+    top: 160px;
+  }
+  .seq{
+    max-height: 375px;
+    min-height: 375px;
+  }
+
+.seq .seq-content img{
+	position:absolute;
+	top:0;
+	left:0;
+  max-height: 330px;
+height:100%;
+	/*width:100%;*/
+	/*display: block;*/
+}
+
+
+}
+
+
+
+@media  ( min-width: 741px)  and    (max-width : 801px){
+
+
+    #sequence li .seq-button{
+	width: 350px;
+
+    }
+
+
+ #sequence li .link{
+    right: -210px;
+    top: 160px;  
+     width: 335px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  }
+
+
+
+
+
+}
+
+
+@media  ( min-width: 481px)  and    (max-width : 740px){
+ 
+ #sequence li .seq-button{
+	width: 350px;
+
+    }
+
+  #sequence li .link{
+    right: -178px;
+    top: 160px;
+   font-size: 17px;
+     width: 320px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  }
+ 
+}
+
+
+
+
+
+
+
+
+
+@media   (min-width: 1px) and (max-width : 480px){
+
+
+.imgpor{
+  max-height: 302px;
+  overflow:hidden;
+}
+
+
+
+	.wrapper-slider{
+    max-width: 100%;
+    max-height: inherit;
+    
+	}
+	.seq{
+		max-height: inherit;
+		min-height: inherit;
+		height: auto;
+	/*	height: 100%;*/
+	}
+	.seq.seq-active{
+		/*overflow:visible;*/
+	}
+	.seq .seq-out .seq-content{
+		display:none;
+	}
+	.seq .seq-in .seq-content{
+		display:inline-block;
+	}
+	.seq .seq-content{
+		margin:0;
+	}
+	.seq .seq-canvas > *{
+		height:auto;
+	}
+	.seq .seq-canvas{
+		height:auto;
+		position: relative;
+	}
+	.seq.seq-active .seq-content{
+		margin:0;
+		width: 100%;
+	}
+	.seq .seq-content img{
+		position: relative;
+		width:100%;
+	}
+  #sequence li img{
+    width:155%; 
+	display: block;
+  }  
+	#sequence li .seq-button{
+		position:relative !important;
+		width:100% !important;
+		right: initial !important;
+		top: initial !important;
+    max-height: 75px;
+    font-size: 20px;
+	}
+	.seq .seq-content .link:nth-of-type(2) {
+		margin-top:20px;
+	}
+	.seq .seq-content .link:last-child {
+		margin-bottom:20px;
+	}
+	.seq .seq-content .link{
+		margin-left:20px;
+	}
+  #sequence li .link{
+    right: initial;
+    top: initial;
+    font-size: 14px;
+    margin-bottom: 15px;
+    width: 90%;
+  }
+	.seq .seq-pagination{
+		position:relative;
+		width:100%;
+		height:45px;
+		background-color:#d7d7d7;
+		bottom:initial;
+	}
+	.pagination-bar{
+		display:none;
+	}
+}
+@media  (min-width: 802px) and (max-width: 1024px) and (orientation: landscape){
+    .seq{
+      max-height: 450px;
+      min-height: 450px;
+    }
+    .wrapper-slider{
+      max-height: 405px;
+    }
+    #sequence li .link{
+      right: -270px;
+    }
+}
+
